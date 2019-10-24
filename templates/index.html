@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>BMI Prediction</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+
+
+<body style="background-color: #181818">
+  <div class="card" style="width: 28rem;margin: 0 auto;float: none;margin-bottom: 10px;margin-top: 30px;font-family: 'IBM Plex Sans', sans-serif;background-color: #282828">
+<article class="card-body">
+  <h4 class="card-title text-center mb-4 mt-1" style="color: white">Predict Your Result</h4>
+  <hr>
+  <form action="{{ url_for('predict')}}" method="post">
+  <div class="form-group">
+  <div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-male"></i> </span>
+     </div>
+    <input name="height" class="form-control" placeholder="Height (in cms)" type="text" required/>
+  </div> <!-- input-group.// -->
+  </div> <!-- form-group// -->
+  <div class="form-group">
+  <div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-male"></i> </span>
+     </div>
+      <input name="weight" class="form-control" placeholder="Weight (in kgs)" type="text" required/>
+  </div> <!-- input-group.// -->
+  </div> <!-- form-group// -->
+
+  <div class="form-group" style="color:white">
+  <input type="radio" name="gender" id="male" value="1"> Male </input> &nbsp &nbsp
+  <input type="radio" name="gender" id="female" value="0"> Female </input><br>
+      <!-- <input name="CGPA" class="form-control" placeholder="CGPA (Out of 10)" type="text" required/> -->
+   <!-- input-group.// -->
+  </div> <!-- form-group// -->
+
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary btn-block" style="background-color: #484848;border-color: #484848"> Check  </button>
+  </div> <!-- form-group// -->
+  <p class="text-center" style="color: white">{{ prediction_text }}</p>
+  </form>
+</article>
+</div> <!-- card.// -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
