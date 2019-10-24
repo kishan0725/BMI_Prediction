@@ -21,17 +21,17 @@ def predict():
     output = prediction[0]
     
     if(output==0):
-        return render_template('index.html', prediction_text='Extremely Weak')
+        return render_template('index.html', prediction_text='Result: Extremely Weak')
     elif(output==1):
-        return render_template('index.html', prediction_text='Weak')
+        return render_template('index.html', prediction_text='Result: Weak')
     elif(output==2):
-        return render_template('index.html', prediction_text='Normal')
+        return render_template('index.html', prediction_text='Result: Normal')
     elif(output==3):
-        return render_template('index.html', prediction_text='Overweight')
+        return render_template('index.html', prediction_text='Result: Overweight')
     elif(output==4):
-        return render_template('index.html', prediction_text='Obesity')
+        return render_template('index.html', prediction_text='Result: Obesity')
     elif(output==5):
-        return render_template('index.html', prediction_text='Extreme Obesity')
+        return render_template('index.html', prediction_text='Result: Extreme Obesity')
     else:
         return render_template('index.html', prediction_text='Can\'t Predict')
     # if(output==):
